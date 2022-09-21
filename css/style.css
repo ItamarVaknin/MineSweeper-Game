@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: beige;
+}
+
+h1 {
+    background-color: hsl(60, 91%, 80%);
+    width: 300px;
+    height: 50px;
+    text-align: center;
+    margin: auto;
+    margin-top: 15px;
+    line-height: 50px;
+    border-radius: 10px;
+    border: 3px solid black;
+}
+
+h2 {
+    background-color: gray;
+    width: 600px;
+    height: 50px;
+    text-align: center;
+    margin: auto;
+    margin-top: 15px;
+    line-height: 50px;
+    border-radius: 2px;
+    border: 1px solid rgb(83, 80, 80);
+}
+
+p {
+    background-color: black;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    color: white;
+    font-size: 23px;
+    border-radius: 6px;
+    line-height: 40px;
+}
+
+.flags {
+    position: absolute;
+    top: 62px;
+    left: 55px;
+    /* left: 292px; the real position */
+}
+
+.timer {
+    position: absolute;
+    top: 62px;
+    right: 55px;
+    /* right: 292px; the real position */
+}
+
+.smiley {
+    background-color: gray;
+    border: none;
+}
+
+table {
+    border: 2px solid gray;
+    background-color: rgb(237, 237, 237);
+    margin: auto;
+}
+
+td {
+    border: 2px solid gray;
+    background-color: rgb(164, 163, 163);
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 18px;
+}
+
+td:hover {
+    background-color: gray;
+}
+
+img.mine {
+    width: 35px;
+    height: 35px;
+}
+
+.shown {
+    background-color: rgb(215, 212, 212);
+}
+
+.is-mine {
+    background-color: #ee1212;
+}
+
+
