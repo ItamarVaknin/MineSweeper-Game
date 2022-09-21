@@ -13,6 +13,7 @@ var gTimerInterval = false
 
 
 const MINE_IMG = '<img src="img/mine.png" class="mine">'
+const FLAG_IMG = '<img src="img/flag.png" class="mine flag">'
 
 
 
@@ -66,7 +67,7 @@ function renderBoard(board) {
 
 			var cellClass = getClassName({ i, j })
 
-			strHTML += '\t<td class="cell ' + cellClass + '"  onclick="cellClicked((this)' + ',' + i + ',' + j + ')" >\n'
+			strHTML += `\t<td class="cell  ${cellClass}"  onclick="cellClicked((this), ${i}, ${j})" onmousedown="toggleFlag(this, ${i}, ${j})">\n`
 
             // modal
             currCell.minesAroundCount =  setMinesNegsCount(gBoard, i, j)
@@ -104,14 +105,15 @@ function setMinesNegsCount(board, rowIdx, colIdx) {
 
 
 function cellClicked(elCell, i, j) {
-    // if (!gTimerInterval) timerPlay()
+    console.log('iswork')
+    if (!gTimerInterval) timerPlay()
     var currCell = gBoard[i][j]
    
     if (currCell.isMine)  {
         elCell.innerHTML += '\t' + MINE_IMG + '\n'
         elCell.classList.add('is-mine')
         console.log('isMine')
-        // gameOver()
+        gameOver()
         return
     }
     if (currCell.isShown) {
@@ -143,9 +145,36 @@ function createMines(board) {
 
 }
 
+function toggleFlag(elCell, i, j) {
+    console.log('asda')
+     console.log(elCell)
+     console.log(i)
+     console.log(j)
+}
+
+window.oncontextmenu = function toggleFlag(elCell, i, j) {
+    
+    // cellClicked(elCell, i, j)
+    // console.log(elCell)
+    console.log(i)
+    console.log(j)
+    // // if (!currCell.isShown)  {
+    //     elCell.innerHTML += '\t' + FLAG_IMG + '\n'
+    //     elCell.classList.toggle('flag')
+    //     console.log('isMine')
+    //     gameOver()
+    //     return
+    // }
+    
+    return false   // cancel default menu
+}
 
 
-
+function gameOver() {
+    stopTimer()
+    console.log('game over')
+    // setTimeout(init, 3000) 
+}
 
 
 
@@ -157,37 +186,43 @@ function createMines(board) {
 // function expandShown(board, elCell, i, j)
 
 
+
+
+
+
+
+
 // // cearte timer for user 
 var seconds = 0;
-var tens = 0;
-var appendTens = document.querySelector('.tens')
+var minutes = 0;
 var appendSeconds = document.querySelector('.seconds')
+var appendMinutes = document.querySelector('.minutes')
 var buttonStart = document.querySelector('.timer')
 
 
 function startTimer() {
-    tens++;
+    seconds++;
 
-    if (tens < 9) {
-        appendTens.innerHTML = "0" + tens
-    }
-    if (tens > 9) {
-        appendTens.innerHTML = tens
-    }
-    if (tens > 99) {
-        seconds++;
+    if (seconds < 9) {
         appendSeconds.innerHTML = "0" + seconds
-        tens = 0;
-        appendTens.innerHTML = "0" + 0;
     }
     if (seconds > 9) {
         appendSeconds.innerHTML = seconds
     }
+    if (seconds > 59) {
+        minutes++;
+        appendMinutes.innerHTML = "0" + minutes
+        seconds = 0;
+        appendSeconds.innerHTML = "0" + 0;
+    }
+    if (minutes > 9) {
+        appendMinutes.innerHTML = minutes
+    }
 }
 
 function timerPlay() {
-    var gTimerInterval = true
-    gTimerInterval = setInterval(startTimer, 10)
+    gTimerInterval = true
+    gTimerInterval = setInterval(startTimer, 1000)
 }
 
 function stopTimer() {
@@ -197,45 +232,11 @@ function stopTimer() {
 
 
 
-
-
-
-// function playTimer() {
-    // gtimerInterval = true
-    // var timer = document.querySelector('.timer')
-    // var start = Date.now()
-    // // console.log(start)
-    
-    // gtimerInterval = setInterval(function () {
-    //     var currTs = Date.now()
-    //     // console.log(currTs - start)
-  
-    //   var minutes = parseInt((currTs - start) / 60000)
-    //   var secs = parseInt((currTs - start) / 1000)
-    
-    //   minutes = '00' + minutes
-    //   secs = '00' + secs
-      
-    //   minutes = minutes.substring(minutes.length - 2, minutes.length)
-    //   secs = secs.substring(secs.length - 2, secs.length)
-    //   var limitTimer = 60
-    //   if (+secs === 60) secs -= limitTimer++
-  
-    // //   timer.innerText = `${secs}:${ms}`
-    //   timer.innerText = `${minutes}:${secs}`
-    // }, 100)
-//   }
-
-
-
 // Returns the class name for a specific cell
 function getClassName(location) {
 	const cellClass = 'cell-' + location.i + '-' + location.j
 	return cellClass
 }
-
-
-
 
 
 
