@@ -28,7 +28,7 @@ h2 {
 .beginner {
     /* background-color: #6cc841; */
     background: linear-gradient(0deg, #3E9629 0%, #58BB46 34%, #53B539 68%, #27960B 100%);
-    margin-left: 560px;
+    margin-left: 640px;
     width: 80px;
     height: 40px;
 }
@@ -50,7 +50,7 @@ h2 {
 .lives {
     float: left;
     position: absolute;
-    left: 386px;
+    left: 456px;
     top: 110px;
     /* margin-left: 371px; */
     /* margin-bottom: 50px; */
@@ -86,14 +86,14 @@ p {
     position: absolute;
     top: 170px;
     /* left: 55px; */
-    left: 389px; 
+    left: 460px; 
 }
 
 .timer {
     position: absolute;
     top: 170px;
     /* right: 55px; */
-    right: 389px; 
+    right: 460px; 
 }
 
 .smiley {
@@ -144,7 +144,7 @@ img.mine {
 
 footer {
     margin-top: 50px;
-    margin-left: 20px;
+    margin-left: 250px;
     background-color: darkblue;
     color: azure;
     width: 150px;
