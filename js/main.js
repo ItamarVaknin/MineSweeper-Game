@@ -137,7 +137,7 @@ function setMinesNegsCount(board, rowIdx, colIdx) {
 
 function cellClicked(elCell, i, j) {
     console.log('cellClicked - iswork')
-    // if(!gGame.isOn) return
+    if(!gGame.isOn) return
     if (!gTimerInterval) timerPlay()
     var currCell = gBoard[i][j]
     
