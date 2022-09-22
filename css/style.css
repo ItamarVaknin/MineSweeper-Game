@@ -2,20 +2,23 @@
     box-sizing: border-box;
 }
 body {
-    background-color: beige;
+    /* background-color: beige; */
+    background: linear-gradient(90deg, #DABF1C 0%, #DABF1C 13%, #C3B454 57%, #E2E096 100%);
 }
 
 h1 {
     background-color: hsl(60, 91%, 80%);
-    width: 300px;
-    height: 50px;
+
+    width: 600px;
+    height: 100px;
     text-align: center;
     margin: auto;
     margin-top: 15px;
     margin-bottom: 15px;
-    line-height: 50px;
+    line-height: 100px;
     border-radius: 10px;
     border: 3px solid black;
+    font-size: 55px;
 }
 
 h2 {
@@ -23,29 +26,43 @@ h2 {
 }
 
 .beginner {
-    background-color: #6cc841;
-    margin-left: 562px;
+    /* background-color: #6cc841; */
+    background: linear-gradient(0deg, #3E9629 0%, #58BB46 34%, #53B539 68%, #27960B 100%);
+    margin-left: 560px;
     width: 80px;
     height: 40px;
 }
 .medium {
-    background-color: #e8cb37;
+    /* background-color: #e8cb37; */
+    background: linear-gradient(0deg, #A2A51A 0%, #D0CD4E 34%, #B3B94D 68%, #B3AF27 100%);
     width: 80px;
     height: 40px;
     
 }
 .expert {
-    background-color: #ee1212;
+    /* background-color: #ee1212; */
+    background: linear-gradient(0deg, #9E1D11 0%, #DA7A5C 34%, #DA7E62 68%, #AD2222 100%);
     width: 80px;
     height: 40px;
 
 }
 
+.lives {
+    float: left;
+    position: absolute;
+    left: 386px;
+    top: 110px;
+    /* margin-left: 371px; */
+    /* margin-bottom: 50px; */
+}
+
 
 h3 {
-    background-color: gray;
+    /* background-color: gray; */
+    background: linear-gradient(88deg, #545451 0%, #9A9892 34%, #A0A09A 68%, #63635F 100%);
+
     width: 624px;
-    height: 50px;
+    height: 53px;
     text-align: center;
     margin: auto;
     margin-top: 15px;
@@ -67,14 +84,14 @@ p {
 
 .flags {
     position: absolute;
-    top: 117px;
+    top: 170px;
     /* left: 55px; */
     left: 389px; 
 }
 
 .timer {
     position: absolute;
-    top: 117px;
+    top: 170px;
     /* right: 55px; */
     right: 389px; 
 }
@@ -82,7 +99,7 @@ p {
 .smiley {
     width: 50px;
     height: 50px;
-    background-color: gray;
+    background-color: #A0A09A;
     border: none;
 }
 
