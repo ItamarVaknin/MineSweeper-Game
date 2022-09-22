@@ -12,14 +12,39 @@ h1 {
     text-align: center;
     margin: auto;
     margin-top: 15px;
+    margin-bottom: 15px;
     line-height: 50px;
     border-radius: 10px;
     border: 3px solid black;
 }
 
 h2 {
+    margin: auto;  
+}
+
+.beginner {
+    background-color: #6cc841;
+    margin-left: 562px;
+    width: 80px;
+    height: 40px;
+}
+.medium {
+    background-color: #e8cb37;
+    width: 80px;
+    height: 40px;
+    
+}
+.expert {
+    background-color: #ee1212;
+    width: 80px;
+    height: 40px;
+
+}
+
+
+h3 {
     background-color: gray;
-    width: 600px;
+    width: 624px;
     height: 50px;
     text-align: center;
     margin: auto;
@@ -42,19 +67,21 @@ p {
 
 .flags {
     position: absolute;
-    top: 62px;
-    left: 55px;
-    /* left: 292px; the real position */
+    top: 117px;
+    /* left: 55px; */
+    left: 389px; 
 }
 
 .timer {
     position: absolute;
-    top: 62px;
-    right: 55px;
-    /* right: 292px; the real position */
+    top: 117px;
+    /* right: 55px; */
+    right: 389px; 
 }
 
 .smiley {
+    width: 50px;
+    height: 50px;
     background-color: gray;
     border: none;
 }
@@ -63,15 +90,18 @@ table {
     border: 2px solid gray;
     background-color: rgb(237, 237, 237);
     margin: auto;
+
 }
 
 td {
     border: 2px solid gray;
     background-color: rgb(164, 163, 163);
+    /* background-color: #a4a3a3; */
     width: 50px;
     height: 50px;
     text-align: center;
     font-size: 18px;
+    
 }
 
 td:hover {
@@ -91,4 +121,20 @@ img.mine {
     background-color: #ee1212;
 }
 
+/* .flag {
+    background-image: url(/img/flag.png)
+} */
+
+footer {
+    margin-top: 50px;
+    margin-left: 20px;
+    background-color: darkblue;
+    color: azure;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    border-radius: 8px;
+}
 

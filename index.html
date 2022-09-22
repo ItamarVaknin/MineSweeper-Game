@@ -9,19 +9,26 @@
 </head>
 <body onload="init()">
     <h1>MineSweeper Game</h1>
+    <h2 class="div-buttons">
+        <button class="beginner" onclick="levelGame(this)" data-level="4">Beginner</button>
+        <button class="medium" onclick="levelGame(this)" data-level="8">Medium</button>
+        <button class="expert"  onclick="levelGame(this)" data-level="12">Expert</button>
+    </h2>
     <div>
-        <h2>
+        <h3>
             <p class="flags">99</p>
-            <button class="smiley">😄</button>
+            <button class="smiley" onclick="init()">
+                <img src="img/smiley.png" class="smiley">
+            </button>
             <p class="timer" id="stop"><span class="minutes">00</span>:<span class="seconds">00</span></p>
-        </h2>
+        </h3>
     </div>
     <div>
         <table>
             <tbody class="board"></tbody>
         </table>
     </div>
-
+    <footer>Itamar Vaknin</footer>
 
     <script src="js/util.js"></script>
     <script src="js/main.js"></script>
