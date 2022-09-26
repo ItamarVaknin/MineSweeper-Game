@@ -10,10 +10,14 @@
 <body onload="init()">
     <h1>MineSweeper Game</h1>
     <h2 class="div-buttons">
+        <h4 class="best-time"></h4>
         <p class="lives"></p>
         <button class="beginner" onclick="levelGame(this)" data-level="4">Beginner</button>
         <button class="medium" onclick="levelGame(this)" data-level="8">Medium</button>
         <button class="expert"  onclick="levelGame(this)" data-level="12">Expert</button>
+        <p class="hints" onclick="hintState()"></p>
+        <button class="safe-click" onclick="safeClick()">Safe Click: <span class="count-safe-click">3</span></button>
+        <button class="btn-manuallyState" onclick="manuallyState()">manually State</button>
     </h2>
     <div>
         <h3>
@@ -22,6 +26,7 @@
                 <img src="img/smiley.png" class="smiley">
             </button>
             <p class="timer" id="stop"><span class="minutes">00</span>:<span class="seconds">00</span></p>
+           
         </h3>
     </div>
     <div>

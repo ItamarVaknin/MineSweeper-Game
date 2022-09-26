@@ -25,18 +25,36 @@ h2 {
     margin: auto;  
 }
 
+.best-time {
+    background: linear-gradient(203deg, #3A3838 0%, #504D4D 15%, #D2CECE 100%);
+    position: absolute;
+    right: 70px;
+    padding: 20px;
+    width: 220px;
+    text-align: center;
+    border-radius: 70px;
+    color: whitesmoke;
+    border: 5px inset gray;
+    font-size: 20px;
+    font-family: 'Segoe UI';
+    font-weight: bold;
+    
+}
+
 .beginner {
     /* background-color: #6cc841; */
     background: linear-gradient(0deg, #3E9629 0%, #58BB46 34%, #53B539 68%, #27960B 100%);
     margin-left: 640px;
     width: 80px;
     height: 40px;
+    cursor: pointer;
 }
 .medium {
     /* background-color: #e8cb37; */
     background: linear-gradient(0deg, #A2A51A 0%, #D0CD4E 34%, #B3B94D 68%, #B3AF27 100%);
     width: 80px;
     height: 40px;
+    cursor: pointer;
     
 }
 .expert {
@@ -44,6 +62,7 @@ h2 {
     background: linear-gradient(0deg, #9E1D11 0%, #DA7A5C 34%, #DA7E62 68%, #AD2222 100%);
     width: 80px;
     height: 40px;
+    cursor: pointer;
 
 }
 
@@ -56,6 +75,66 @@ h2 {
     /* margin-bottom: 50px; */
 }
 
+.hints {
+    float: right;
+    position: absolute;
+    right: 370px;
+    top: 110px;
+    cursor: pointer;
+    /* margin-left: 371px; */
+    /* margin-bottom: 50px; */
+}
+
+.safe-click {
+    position: absolute;
+    left: 100px;
+    top: 158px;
+    background-color: #4770eb;
+    color: azure;
+    padding: 10px;
+    width: 220px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 70px;
+    border: 5px inset blue;
+    font-size: 20px;
+    font-family: 'Segoe UI';
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.safe-click:hover {
+ background-color: slateblue;
+}
+
+.safe {
+    transition: 1s;
+    background-color: #7896f1;
+}
+
+
+.btn-manuallyState {
+    position: absolute;
+    left: 100px;
+    top: 270px;
+    background-color: #7d5d05;
+    color: azure;
+    padding: 10px;
+    width: 220px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 70px;
+    border: 5px inset #8b7604;
+    font-size: 20px;
+    font-family: 'Segoe UI';
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+.btn-manuallyState:hover {
+    background-color: #a47a06
+}
 
 h3 {
     /* background-color: gray; */
@@ -101,6 +180,7 @@ p {
     height: 50px;
     background-color: #A0A09A;
     border: none;
+    cursor: pointer;
 }
 
 table {
