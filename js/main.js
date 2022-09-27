@@ -20,6 +20,7 @@ var gBestTime = Infinity
 var gSafeClicks = 3
 var gSequence = []
 var gMegaHintCountClick = 0
+var gNumManuallyMines = 0
 
 
 const WIN_IMG = '<img src="img/win.png" class="smiley">'
@@ -31,35 +32,26 @@ const FLAG_IMG = '<img src="img/flag.png" class="mine flag">'
 
 function levelGame(elLevel) {
     var level = elLevel.getAttribute('data-level')
-    // console.log(level)
     gLevel.SIZE = level
     switch (+level) {
         case 4:
         gLevel.MINES = 2
         gLevel.LIVES = 0
         gLevel.HINTS = 0
-        // console.log(gLevel.HINTS)
-        // console.log(gLevel.LIVES)
-        // console.log(gLevel.MINES)
         break
         case 8:
         gLevel.MINES = 14
         gLevel.LIVES = 2
         gLevel.HINTS = 2
-        // console.log(gLevel.HINTS)
-        // console.log(gLevel.LIVES)
-        // console.log(gLevel.MINES)
         break
         case 12:
         gLevel.MINES = 32
         gLevel.LIVES = 3
         gLevel.HINTS = 3
-        // console.log(gLevel.HINTS)
-        // console.log(gLevel.LIVES)
-        // console.log(gLevel.MINES)
         break
     }
-    localStorage.setItem('lives', gLevel.LIVES);
+    localStorage.setItem('lives', gLevel.LIVES)
+    // localStorage.setItem('mines', gLevel.MINES)
     init()
 }
 
@@ -78,6 +70,7 @@ function createCell(i, j) {
 function init() {
     gGame.isOn = true
     gLevel.LIVES = localStorage.getItem('lives')
+    // gLevel.MINES = localStorage.getItem('mines')
     if (gLevel.SIZE <= 4) gLevel.LIVES = 0
     gSafeClicks = 3
     var numSafeClicks = document.querySelector('.count-safe-click')
@@ -594,6 +587,8 @@ function manuallyState() {
     else {
         gGame.manuallyState = false
         btnManually.style.backgroundColor = '#7d5d05'
+        gLevel.MINES = gNumManuallyMines
+        gNumManuallyMines = 0
         renderBoard(gBoard)
     }
 
@@ -607,6 +602,7 @@ function createManuallyMines(i, j) {
     if (gBoard[i][j].isShown) return
     else gBoard[i][j].isMine = true
     console.log(gBoard[i][j])
+    gNumManuallyMines++
 
 }
 
