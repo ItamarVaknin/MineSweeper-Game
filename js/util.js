@@ -1,5 +1,16 @@
 'use strict'
 
+const btn = document.querySelector('.btn-drak')
+const h1 = document.querySelector('h1')
+const body = document.querySelector('body')
+
+btn.onclick = function () {
+    this.classList.toggle('active')
+    body.classList.toggle('active')
+    h1.classList.toggle('active')
+}
+
+
 function createMat(ROWS, COLS) {
     const mat = []
     for (var i = 0; i < ROWS; i++) {

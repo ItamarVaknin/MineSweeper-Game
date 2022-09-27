@@ -8,9 +8,12 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body onload="init()">
+    <div class="btn-drak"></div>
     <h1>MineSweeper Game</h1>
     <h2 class="div-buttons">
         <h4 class="best-time"></h4>
+        <button class="undo" onclick="undoPlay()">UNDO</button>
+        <button class="mega-hint" onclick="megaHintState()">Mega Hint</button>
         <p class="lives"></p>
         <button class="beginner" onclick="levelGame(this)" data-level="4">Beginner</button>
         <button class="medium" onclick="levelGame(this)" data-level="8">Medium</button>
@@ -18,6 +21,8 @@
         <p class="hints" onclick="hintState()"></p>
         <button class="safe-click" onclick="safeClick()">Safe Click: <span class="count-safe-click">3</span></button>
         <button class="btn-manuallyState" onclick="manuallyState()">manually State</button>
+        <button class="seven-boom" onclick="sevenBoomMines()">7 BOOM!</button>
+        <button class="exterminator" onclick="exterminatorMines()">Mine Exterminator</button>
     </h2>
     <div>
         <h3>
@@ -35,6 +40,7 @@
         </table>
     </div>
     <footer>Itamar Vaknin</footer>
+        
 
     <script src="js/util.js"></script>
     <script src="js/main.js"></script>
