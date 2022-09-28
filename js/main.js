@@ -51,7 +51,7 @@ function levelGame(elLevel) {
         break
     }
     localStorage.setItem('lives', gLevel.LIVES)
-    // localStorage.setItem('mines', gLevel.MINES)
+    localStorage.setItem('mines', gLevel.MINES)
     init()
 }
 
@@ -70,7 +70,6 @@ function createCell(i, j) {
 function init() {
     gGame.isOn = true
     gLevel.LIVES = localStorage.getItem('lives')
-    // gLevel.MINES = localStorage.getItem('mines')
     if (gLevel.SIZE <= 4) gLevel.LIVES = 0
     gSafeClicks = 3
     var numSafeClicks = document.querySelector('.count-safe-click')
@@ -255,7 +254,7 @@ function createMines(board) {
 window.addEventListener("contextmenu", function(event){
     event.preventDefault()
     // console.log(event.path[0])
-
+    if(!event.path[0].classList.contains('cell')) return
     if (!gTimerInterval) timerPlay()
     if (event.path[0].classList.contains('shown')) return
     if (event.path[0].classList.contains('flag')) {
@@ -451,13 +450,15 @@ function checkGameOver() {
                 stopTimer()
                 changeSmiley()
                 gGame.isOn = false
+                gLevel.MINES = localStorage.getItem('mines')
+                console.log('gLevel.MINES:',gLevel.MINES)
                 // console.log(startTime)
                 var resFinish = Date.now() - startTime
                 // console.log(resFinish)
                 if (resFinish < gBestTime) {
                     gBestTime = (resFinish / 1000).toFixed(1)
                     localStorage.setItem('best-time', gBestTime);
-                    // showBTime.innerText = 'Best Time: ' + bestTime + '\'s';
+                    
                 }
             }
 		}
@@ -467,13 +468,13 @@ function checkGameOver() {
 
 
 function gameOver(elCell, i, j) {
-    stopTimer()
+    if (gBoard[i][j].isShown) return
     var counter = gLevel.LIVES
     if (gGame.isHint || gGame.megaHint) {
         elCell.innerHTML += '\t' + MINE_IMG + '\n'
         return
     }
-
+    
     if (counter > 1) {
         // console.log(gBoard[i][j])
         elCell.innerHTML += '\t' + MINE_IMG + '\n'
@@ -484,7 +485,8 @@ function gameOver(elCell, i, j) {
         gameLives()
         return
     }
-    
+
+    stopTimer()
     elCell.classList.add('is-mine')
 	for (var i = 0; i < gBoard.length; i++) {
 		for (var j = 0; j < gBoard[0].length; j++) {
@@ -505,6 +507,8 @@ function gameOver(elCell, i, j) {
     gameLives()
     console.log('game over')
     gGame.isOn = false
+    gLevel.MINES = localStorage.getItem('mines')
+    console.log('gLevel.MINES:',gLevel.MINES)
     changeSmiley()
 
     console.log('gLevel.MINES:',gLevel.MINES)
